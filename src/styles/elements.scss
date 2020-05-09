@@ -1,0 +1,55 @@
+@import "./colors.scss";
+
+.full-page-height {
+  min-height: 100vh;
+}
+.full-width {
+  width: 100%;
+}
+.simple-flex {
+  display: flex;
+  align-items: center;
+}
+
+.centered-flex {
+  @extend .simple-flex;
+  justify-content: center;
+}
+
+.block {
+  display: block;
+}
+
+.app-form-row {
+  padding: 0.5rem 0;
+}
+
+.login-box {
+  box-sizing: border-box;
+}
+
+.login-input {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid $idleBorder;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  border: 1px solid $darkGreen;
+  background-color: $lightGreenTrans;
+}
+
+.app-button {
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 0;
+  font-size: 0.9rem;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease-in-out;
+  &.bg-dark-green:hover {
+    background-color: lighten($color: $darkGreen, $amount: 10);
+  }
+}
