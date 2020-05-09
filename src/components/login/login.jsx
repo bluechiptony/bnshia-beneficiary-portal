@@ -9,7 +9,7 @@ export const Login = () => {
   const navigate = () => {
     console.log("History");
 
-    history.push("/dashboard");
+    history.push("/home");
   };
 
   return (
@@ -18,37 +18,40 @@ export const Login = () => {
         <div className="col-lg-7 col-sm-7 col-xs-12">
           <div className="full-page-height centered-flex">
             <div className="login-box center-text">
-              <div className="app-form-row">
-                <span className="login-header">Please enter your login credentials</span>
-              </div>
-              <div className="app-form-row">
-                <input type="text" placeholder="Enter your email address" className="login-input full-width" />
-              </div>
-              <div className="app-form-row">
-                <input type="password" placeholder="Enter your password" className="login-input full-width" />
-              </div>
-              <div className="app-form-row right-text">
-                <span className="subtitle">
-                  Forgot your password{" "}
-                  <Link to="/forgot-password">
-                    <span className="bold">Click here</span>
-                  </Link>
-                </span>
-              </div>
-              <div className="app-form-row">
-                <button className="app-button full-width text-white bg-dark-green uppercase" onClick={navigate}>
-                  Login
-                </button>
-              </div>
-              <div className="app-form-row">
-                <span className="subtitle">
-                  New user?{" "}
-                  <Link to="/sign-up">
-                    <span className="bold">Click here</span>
-                  </Link>{" "}
-                  to create an account
-                </span>
-              </div>
+              <form onSubmit={handleSubmit}>
+                <div className="app-form-row">
+                  <span className="login-header">Please enter your login credentials</span>
+                </div>
+                <div className="app-form-row">
+                  <input type="text" name="emailAddress" placeholder="Enter your email address" className="login-input full-width" ref={register({ required: true })} />
+                  {errors.emailAddress && "Please enter your email address"}
+                </div>
+                <div className="app-form-row">
+                  <input type="password" placeholder="Enter your password" className="login-input full-width" />
+                </div>
+                <div className="app-form-row right-text">
+                  <span className="subtitle">
+                    Forgot your password{" "}
+                    <Link to="/forgot-password">
+                      <span className="bold">Click here</span>
+                    </Link>
+                  </span>
+                </div>
+                <div className="app-form-row">
+                  <button className="app-button full-width text-white bg-dark-green uppercase" onClick={navigate}>
+                    Login
+                  </button>
+                </div>
+                <div className="app-form-row">
+                  <span className="subtitle">
+                    New user?{" "}
+                    <Link to="/sign-up">
+                      <span className="bold">Click here</span>
+                    </Link>{" "}
+                    to create an account
+                  </span>
+                </div>
+              </form>
             </div>
           </div>
         </div>
