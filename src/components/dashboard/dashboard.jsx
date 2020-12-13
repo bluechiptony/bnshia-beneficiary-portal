@@ -7,12 +7,12 @@ import { Visits } from "../visits/visits";
 export const Dashboard = () => {
   return (
     <div>
-      <NavigationBar />
       <div className="container-fluid">
         <HomeRouter>
+          <NavigationBar />
           <Route path="/home" exact component={Overview} />
           <Route path="/home/contributions" component={Contributions} />
-          <Route path="/home/visits" component={Visits} />
+          <Route path="/home/encounters" component={Visits} />
         </HomeRouter>
       </div>
     </div>
@@ -32,7 +32,7 @@ export const NavigationBar = () => {
             <Link to="/home/contributions">Contributions</Link>
           </li>
           <li>
-            <Link to="/home/visits">Visits</Link>
+            <Link to="/home/encounters">Encounters</Link>
           </li>
           <li>
             <Link to="/home/profile">Profile</Link>
